@@ -3,7 +3,9 @@ package sv.edu.udb.desafio2pm190339cs171609;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class MenuScreen extends AppCompatActivity {
@@ -15,6 +17,14 @@ public class MenuScreen extends AppCompatActivity {
     }
 
     public void escogerMedicinas(View v){
+        DbHelper dbHelper = new DbHelper(MenuScreen.this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        if(db != null){
+            Log.d("MENSAJE: ", "Base de datos creada con exito");
+        } else {
+            Log.d("MENSAJE: ", "Error al crear la base de datos");
+        }
+
         Intent intent =new Intent(MenuScreen.this,MedicineScreen.class);
         startActivity(intent);
     }

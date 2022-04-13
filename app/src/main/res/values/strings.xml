@@ -3,4 +3,13 @@
     <string name="title_medicines">Elija sus medicamentos.</string>
     <string name="title_bills">Realice su compra.</string>
     <string name="title_reports">Historial de compras.</string>
+    <string name="textview_clientname">Nombre del cliente.</string>
+    <string name="textview_clientdate">Fecha.</string>
+    <string name="button_addpurchaseorder">Agregar orden de compra</string>
+    <string name="spinner_medicines">Seleccione los medicamentos.</string>
+    <string name="spinner_datamedicines">Seleccione</string>
+    <string name="textview_medicinename">Nombre del medicamento.</string>
+    <string name="textview_medicineprice">Precio del medicamento.</string>
+    <string name="textview_medicinequantity">Cantidad.</string>
+    <string name="button_addmedicine">Agregar medicamento</string>
 </resources>
