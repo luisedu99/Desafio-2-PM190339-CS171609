@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Desafio 2 PM190339 CS171609</string>
+    <string name="title_medicines">Elija sus medicamentos.</string>
+    <string name="title_bills">Realice su compra.</string>
+    <string name="title_reports">Historial de compras.</string>
 </resources>

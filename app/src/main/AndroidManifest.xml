@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Desafio2PM190339CS171609">
         <activity
+            android:name=".ReportScreen"
+            android:exported="false" />
+        <activity
+            android:name=".BillScreen"
+            android:exported="false" />
+        <activity
+            android:name=".MedicineScreen"
+            android:exported="false" />
+        <activity
+            android:name=".MenuScreen"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
