@@ -8,10 +8,23 @@
     tools:context=".MenuScreen">
 
     <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="165dp"
+        android:layout_height="169dp"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="120dp"
+        android:backgroundTint="#FFF7FB"
+        android:onClick="pagarMedicinas"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu2" />
+
+    <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="166dp"
         android:layout_height="149dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="492dp"
         android:layout_marginEnd="120dp"
         android:backgroundTint="#FFF7FB"
         android:onClick="historialCompras"
@@ -20,11 +33,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_menu3" />
 
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="652dp"
+        android:text="@string/textview_menu3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="162dp"
         android:layout_height="160dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="124dp"
         android:backgroundTint="#FFF7FB"
         android:onClick="escogerMedicinas"
@@ -33,17 +56,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_menu1" />
 
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="165dp"
-        android:layout_height="169dp"
-        android:layout_marginTop="296dp"
-        android:layout_marginEnd="120dp"
-        android:backgroundTint="#FFF7FB"
-        android:onClick="pagarMedicinas"
-        android:scaleType="centerInside"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_menu2" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="448dp"
+        android:text="@string/textview_menu2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="228dp"
+        android:text="@string/textview_menu1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

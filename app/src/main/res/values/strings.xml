@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Desafio 2 PM190339 CS171609</string>
+    <string name="textview_menu1">Realice su orden de compra.</string>
+    <string name="textview_menu2">Procesa con su pago.</string>
+    <string name="textview_menu3">Historial de ventas.</string>
     <string name="title_medicines">Elija sus medicamentos.</string>
     <string name="title_bills">Realice su compra.</string>
     <string name="title_reports">Historial de compras.</string>
