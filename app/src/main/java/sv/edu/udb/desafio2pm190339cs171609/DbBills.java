@@ -2,6 +2,7 @@ package sv.edu.udb.desafio2pm190339cs171609;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
@@ -33,4 +34,22 @@ public class DbBills extends  DbHelper {
         }
         return id;
     }
+/*
+    public Cursor getIdBill(){
+        try{
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor rows = db.rawQuery("SELECT * FROM  " + TABLE_BILLS + " WHERE client = ", null);
+            if(rows.moveToFirst()){
+                return rows;
+            }else{
+                return null;
+            }
+        }catch(Exception ex){
+            return null;
+        }
+    }*/
+
+
+
+
 }

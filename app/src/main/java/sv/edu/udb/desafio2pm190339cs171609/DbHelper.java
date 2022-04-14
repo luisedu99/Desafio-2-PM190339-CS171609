@@ -40,6 +40,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "id_medicineFk INTEGER NOT NULL," +
                 "quantity INTEGER NOT NULL," +
                 "price REAL NOT NULL," +
+                "total REAL NOT NULL," +
                 "FOREIGN KEY(id_billFk) REFERENCES t_bills(id_bill)," +
                 "FOREIGN KEY(id_medicineFk) REFERENCES t_medicines(id_medicine))");
 
