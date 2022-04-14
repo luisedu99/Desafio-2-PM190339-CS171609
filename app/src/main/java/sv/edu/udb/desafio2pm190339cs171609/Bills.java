@@ -47,4 +47,8 @@ public class Bills {
     public void setStatus(int status) {
         this.status = status;
     }
+
+    public String toString(){
+        return name;
+    }
 }

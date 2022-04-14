@@ -12,4 +12,13 @@
     <string name="textview_medicineprice">Precio del medicamento.</string>
     <string name="textview_medicinequantity">Cantidad.</string>
     <string name="button_addmedicine">Agregar medicamento</string>
+    <string name="textview_orderidlegend">Numero de orden:</string>
+    <string name="textview_orderidvalue">#</string>
+    <string name="textview_clientlegend">Nombre de cliente:</string>
+    <string name="textview_clientvalue">Consumidor final</string>
+    <string name="textview_datelegend">Fecha de orden:</string>
+    <string name="textview_datevalue">dd/mm/aaaa</string>
+    <string name="textview_amountlegend">Monto a pagar($):</string>
+    <string name="textview_amountvalue">$</string>
+    <string name="button_updateamount">Actualizar monto total</string>
 </resources>

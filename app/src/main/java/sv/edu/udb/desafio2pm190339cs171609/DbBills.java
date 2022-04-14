@@ -34,6 +34,20 @@ public class DbBills extends  DbHelper {
         }
         return id;
     }
+
+    public Cursor showBills(){
+        try{
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor rows = db.rawQuery("SELECT * FROM  " + TABLE_BILLS + " WHERE status_bill = 0 ", null);
+            if(rows.moveToFirst()){
+                return rows;
+            }else{
+                return null;
+            }
+        }catch(Exception ex){
+            return null;
+        }
+    }
 /*
     public Cursor getIdBill(){
         try{
