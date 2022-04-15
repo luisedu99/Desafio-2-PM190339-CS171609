@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +22,9 @@ public class BillScreen extends AppCompatActivity {
 
     Spinner spnClients;
     TextView txtvOrdernum, txtvClient, txtvDate, txtvAmount;
-    Button btnUpdateAmount;
+    Button btnUpdateAmount, btnPayBill;
     ArrayList<Details> detailList2;
+    boolean result = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class BillScreen extends AppCompatActivity {
         txtvDate = findViewById(R.id.txtvDate);
         txtvAmount = findViewById(R.id.txtvAmount);
         btnUpdateAmount = findViewById(R.id.btnUpdateAmount);
+        btnPayBill = findViewById(R.id.btnPay);
 
         List<Bills> clientsList = fillClientsSpinner();
         ArrayAdapter<Bills> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item, clientsList);
@@ -65,6 +68,36 @@ public class BillScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sumPrices();
+            }
+        });
+
+        //Pagar orden de compra, actualizar monto de la factura y cambiar estatus de la compra
+        btnPayBill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Double.parseDouble(txtvAmount.getText().toString()) > 0.00 && txtvOrdernum.getText().toString() != ""){
+                    Log.d("UPDATE STATUS BILLS:  ", "El monto es mayor a 0 y no esta vacio el id de orden ");
+                    int id_order = Integer.parseInt(txtvOrdernum.getText().toString());
+                    double order_amount = Double.parseDouble(txtvAmount.getText().toString());
+
+                    Log.d("VALOR DE ID:  ", String.valueOf(id_order));
+                    Log.d("VALOR DE MONTO:  ", String.valueOf(order_amount));
+
+                    DbBills dbBills = new DbBills(BillScreen.this);
+                    result = dbBills.updateStatusBills(id_order, order_amount);
+
+                    if(result){
+                        Toast.makeText(BillScreen.this, "ORDEN DE COMPRA PAGADA CON EXITO", Toast.LENGTH_LONG).show();
+                        Log.d("RESULT DE METODO DE LA CLASE:  ", "ORDEN DE COMPRA PAGADA CON EXITO");
+                    }else{
+                        Toast.makeText(BillScreen.this, "ERROR AL REALIZAR EL PAGO", Toast.LENGTH_LONG).show();
+                        Log.d("RESULT DE METODO DE LA CLASE:  ", "ERROR AL REALIZAR EL PAGO");
+                    }
+
+                }else{
+                    Toast.makeText(BillScreen.this, "ERROR: El monto es menor o igual a 0 o esta vacio el id de orden", Toast.LENGTH_LONG).show();
+                    Log.d("UPDATE STATUS BILLS:  ", "El monto es menor o igual a 0 o esta vacio el id de orden");
+                }
             }
         });
     }

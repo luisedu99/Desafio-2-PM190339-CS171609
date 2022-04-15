@@ -48,6 +48,25 @@ public class DbBills extends  DbHelper {
             return null;
         }
     }
+
+    public boolean updateStatusBills(int id, double total_amount){
+        boolean result = false;
+        int status_bill = 1;
+
+        DbHelper dbHelper = new DbHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        try {
+            db.execSQL("UPDATE " + TABLE_BILLS + " SET status_bill = '" + status_bill + "', total_amount = '" + total_amount + "' WHERE id_bill = '" + id +  "'");
+            result = true;
+        } catch (Exception ex) {
+            ex.toString();
+            result = false;
+        }finally {
+            db.close();
+        }
+        return result;
+    }
 /*
     public Cursor getIdBill(){
         try{

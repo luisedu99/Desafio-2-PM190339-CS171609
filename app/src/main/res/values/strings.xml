@@ -24,4 +24,5 @@
     <string name="textview_amountlegend">Monto a pagar($):</string>
     <string name="textview_amountvalue">$</string>
     <string name="button_updateamount">Actualizar monto total</string>
+    <string name="button_pay">Pagar compra</string>
 </resources>
