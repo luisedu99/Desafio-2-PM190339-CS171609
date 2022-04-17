@@ -49,6 +49,20 @@ public class DbBills extends  DbHelper {
         }
     }
 
+    public Cursor showBills2(){
+        try{
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor rows = db.rawQuery("SELECT * FROM  " + TABLE_BILLS + " WHERE status_bill = 1 ", null);
+            if(rows.moveToFirst()){
+                return rows;
+            }else{
+                return null;
+            }
+        }catch(Exception ex){
+            return null;
+        }
+    }
+
     public boolean updateStatusBills(int id, double total_amount){
         boolean result = false;
         int status_bill = 1;
