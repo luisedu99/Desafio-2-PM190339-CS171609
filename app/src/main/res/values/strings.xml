@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Desafio 2 PM190339 CS171609</string>
+    <string name="app_name">Medication consulting</string>
     <string name="textview_menu1">Realice su orden de compra.</string>
     <string name="textview_menu2">Procesa con su pago.</string>
     <string name="textview_menu3">Historial de ventas.</string>
