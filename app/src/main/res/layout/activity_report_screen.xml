@@ -32,36 +32,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnHistorial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cargar historial"
-        app:layout_constraintStart_toStartOf="@+id/textView"
+    <TextView
+        android:id="@+id/txtHistorialTotal"
+        android:layout_width="101dp"
+        android:layout_height="389dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="132dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toEndOf="@+id/txtHistorialDate"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/txtHistorialName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        app:layout_constraintStart_toStartOf="@+id/btnHistorial"
-        app:layout_constraintTop_toBottomOf="@+id/btnHistorial" />
+        android:layout_width="127dp"
+        android:layout_height="387dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="132dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/txtHistorialDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        app:layout_constraintStart_toStartOf="@+id/txtHistorialName"
-        app:layout_constraintTop_toBottomOf="@+id/txtHistorialName" />
-
-    <TextView
-        android:id="@+id/txtHistorialTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        app:layout_constraintStart_toStartOf="@+id/txtHistorialDate"
-        app:layout_constraintTop_toBottomOf="@+id/txtHistorialDate" />
+        android:layout_width="122dp"
+        android:layout_height="388dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="132dp"
+        app:layout_constraintStart_toEndOf="@+id/txtHistorialName"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

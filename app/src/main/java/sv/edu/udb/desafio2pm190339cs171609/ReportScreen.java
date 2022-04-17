@@ -1,6 +1,7 @@
 package sv.edu.udb.desafio2pm190339cs171609;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.content.Intent;
@@ -15,7 +16,6 @@ import java.util.List;
 
 public class ReportScreen extends AppCompatActivity {
 
-    Button btnHistorial;
     TextView txtHistorialName, txtHistorialDate, txtHistorialTotal;
 
     @Override
@@ -23,19 +23,12 @@ public class ReportScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_screen);
 
-        btnHistorial = findViewById(R.id.btnHistorial);
         txtHistorialName = findViewById(R.id.txtHistorialName);
         txtHistorialDate = findViewById(R.id.txtHistorialDate);
         txtHistorialTotal = findViewById(R.id.txtHistorialTotal);
 
         List<Bills> ordersList  = getOrders();
 
-        btnHistorial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getOrders();
-            }
-        });
 
     }
 
@@ -63,9 +56,18 @@ public class ReportScreen extends AppCompatActivity {
                     bills.setStatus(cursor.getInt(cursor.getColumnIndexOrThrow("status_bill")));
                     OrderList.add(bills);
 
-                    txtHistorialName.setText(bills.getName().toString());
-                    txtHistorialDate.setText(bills.getDate().toString());
-                    txtHistorialTotal.setText(String.valueOf(bills.getAmount()));
+                    StringBuilder editClient = new StringBuilder();
+                    editClient.append(bills.getName()).append("\n");
+
+                    StringBuilder editDate = new StringBuilder();
+                    editDate.append(bills.getDate()).append("\n");
+
+                    StringBuilder editAmount = new StringBuilder();
+                    editAmount.append("$"+ String.valueOf(bills.getAmount())).append("\n");
+
+                    txtHistorialName.append(editClient);
+                    txtHistorialDate.append(editDate);
+                    txtHistorialTotal.append(editAmount);
 
                 }while(cursor.moveToNext());
             }
